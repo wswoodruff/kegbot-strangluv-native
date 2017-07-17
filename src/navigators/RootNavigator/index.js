@@ -2,7 +2,10 @@ const React = require('react');
 const T = require('prop-types');
 const Reducers = require('wiring/reducers');
 const Connect = require('react-redux').connect;
-const { StackNavigator, addNavigationHelpers } = require('react-navigation');
+const { DrawerNavigator, addNavigationHelpers } = require('react-navigation');
+const DrawerComponent = require('./DrawerComponent');
+const MainStack = require('../MainStack');
+
 const internals = {};
 
 internals.connect = Connect(
@@ -24,13 +27,15 @@ module.exports = (store) => {
 
     // Screens returns { routeConfig, initialRouteName }
 
-    const AppNavigator = StackNavigator(
-
-        Screens.routeConfig,
-
+    const AppNavigator = DrawerNavigator(
+        {
+            Main: { screen: MainStack(store, Screens) }
+        },
         {
             // nav config
-            initialRouteName: Screens.initialRouteName
+            initialRoute: 'Main',
+            drawerPosition: 'right',
+            contentComponent: DrawerComponent
         }
     );
 

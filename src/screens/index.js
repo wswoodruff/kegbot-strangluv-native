@@ -1,4 +1,4 @@
-const React = require('react');
+
 const Counter = require('./counter');
 const Home = require('./home');
 
@@ -14,6 +14,22 @@ module.exports = (store) => {
             Home,
             Counter
         },
-        initialRouteName: 'Home'
+
+        initialRouteName: 'Home',
+
+        tabBarOptions: {
+            bottomNavigationOptions: {
+                labelColor: 'white',
+                rippleColor: 'white',
+                tabs: {
+                    Home: {
+                        barBackgroundColor: '#37474F'
+                    },
+                    Counter: {
+                        barBackgroundColor: '#e6158d'
+                    }
+                }
+            }
+        }
     };
 };

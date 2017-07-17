@@ -1,5 +1,16 @@
 const React = require('react');
+const { MKButton } = require('react-native-material-kit');
 const T = require('prop-types');
+const { default: styled } = require('styled-components/native');
+
+
+const HomeBtn = MKButton.coloredButton()
+    .withText('Home')
+    .build();
+
+const CounterBtn = MKButton.coloredButton()
+    .withText('Counter')
+    .build();
 
 // Styles
 
@@ -8,12 +19,15 @@ const lStyles = require('./styles'); // local styles
 
 const {
     ScrollView,
-    Text,
     Title } = gStyles;
 
 const {
     Duck,
     InheritStylesText } = lStyles;
+
+const HomeBtnContainer = styled.View`
+    margin-bottom: 10px;
+`
 
 // Component
 
@@ -32,7 +46,7 @@ module.exports = class HomeView extends React.PureComponent {
 
     _navigate(navigation, path) {
 
-        return (...a) => {
+        return () => {
 
             navigation.navigate(path);
         }
@@ -43,21 +57,17 @@ module.exports = class HomeView extends React.PureComponent {
         const { navigation, style } = this.props;
 
         return (
+
             <ScrollView>
-                <InheritStylesText
-                    color='#b71c1c' // Material Red900
-                    onPress={this.navigate(navigation, 'Home')}>
 
-                    Home
-
-                </InheritStylesText>
-
-                <InheritStylesText
-                    onPress={this.navigate(navigation, 'Counter')}>
-
-                    Counter
-
-                </InheritStylesText>
+                <HomeBtnContainer>
+                    <HomeBtn
+                        onPress={() => (navigation.navigate('Home'))}
+                    />
+                </HomeBtnContainer>
+                <CounterBtn
+                    onPress={() => (navigation.navigate('Counter'))}
+                />
 
                 <Title> Welcome! </Title>
 

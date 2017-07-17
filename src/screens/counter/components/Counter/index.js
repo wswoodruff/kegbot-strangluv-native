@@ -1,5 +1,16 @@
 const React = require('react');
+
+const Icon = require('react-native-vector-icons/MaterialIcons').default;
+const { MKButton } = require('react-native-material-kit');
 const T = require('prop-types');
+
+const IncrementBtn = MKButton.coloredButton()
+    .withText('Increment')
+    .build();
+
+const CounterBtn = MKButton.coloredButton()
+    .withText('Double (Async)')
+    .build();
 
 // Styles
 
@@ -35,13 +46,14 @@ module.exports = class Counter extends React.PureComponent {
             <ScrollView>
                 <Title>Counter:</Title>
                 <Text>{' '}</Text>
+
                 <StylishText>{counter}</StylishText>
-                <Button
+                <IncrementBtn
                     onPress={increment}
                     title='Increment'
                 />
                 <Text>{' '}</Text>
-                <Button
+                <CounterBtn
                     onPress={doubleAsync}
                     title='Double (Async)'
                 />
