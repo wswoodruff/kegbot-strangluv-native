@@ -1,6 +1,8 @@
 
 const Counter = require('./counter');
 const Home = require('./home');
+const Beer = require('./beer');
+
 
 // This is our main route config,
 // to have a single place to collect
@@ -11,18 +13,18 @@ module.exports = (store) => {
 
     return {
         routeConfig: {
-            Home,
+            Beer,
             Counter
         },
 
-        initialRouteName: 'Home',
+        initialRouteName: 'Beer',
 
         tabBarOptions: {
             bottomNavigationOptions: {
                 labelColor: 'white',
                 rippleColor: 'white',
                 tabs: {
-                    Home: {
+                    Beer: {
                         barBackgroundColor: '#37474F'
                     },
                     Counter: {

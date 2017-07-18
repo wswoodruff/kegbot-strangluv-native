@@ -1,16 +1,7 @@
 const React = require('react');
-const { MKButton } = require('react-native-material-kit');
+const { CoreRipple } = require('material-native');
 const T = require('prop-types');
-const { default: styled } = require('styled-components/native');
-
-
-const HomeBtn = MKButton.coloredButton()
-    .withText('Home')
-    .build();
-
-const CounterBtn = MKButton.coloredButton()
-    .withText('Counter')
-    .build();
+// const MaterialRipple = require('components/MaterialRipple');
 
 // Styles
 
@@ -19,15 +10,12 @@ const lStyles = require('./styles'); // local styles
 
 const {
     ScrollView,
+    Text,
     Title } = gStyles;
 
 const {
     Duck,
     InheritStylesText } = lStyles;
-
-const HomeBtnContainer = styled.View`
-    margin-bottom: 10px;
-`
 
 // Component
 
@@ -57,17 +45,31 @@ module.exports = class HomeView extends React.PureComponent {
         const { navigation, style } = this.props;
 
         return (
-
             <ScrollView>
 
-                <HomeBtnContainer>
-                    <HomeBtn
-                        onPress={() => (navigation.navigate('Home'))}
-                    />
-                </HomeBtnContainer>
-                <CounterBtn
-                    onPress={() => (navigation.navigate('Counter'))}
-                />
+                <CoreRipple
+                    pointerEvents='box-only'
+                    shadowAniEnabled
+                    maskBorderRadius={3}
+                    onPress={() => {
+
+                        navigation.navigate('Home');
+                    }}
+                >
+                    <Text>Home</Text>
+                </CoreRipple>
+                <Text>{' '}</Text>
+                <CoreRipple
+                    pointerEvents='box-only'
+                    shadowAniEnabled
+                    maskBorderRadius={3}
+                    onPress={() => {
+
+                        navigation.navigate('Counter');
+                    }}
+                >
+                    <Text>Counter</Text>
+                </CoreRipple>
 
                 <Title> Welcome! </Title>
 

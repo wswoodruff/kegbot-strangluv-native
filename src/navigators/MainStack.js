@@ -6,7 +6,13 @@ const MainTabs = require('./MainTabs');
 // Styles
 
 const gStyles = require('styles');
-const { MenuIcon } = gStyles;
+const { styled: MaterialIcon } = require('components/MaterialIcon');
+
+const StyledMaterialIcon = MaterialIcon.attrs({
+    size: 26
+})`
+    padding-right: 10px;
+`;
 
 // Component
 module.exports = (store, screens) => {
@@ -23,7 +29,7 @@ module.exports = (store, screens) => {
             navigationOptions: ({ navigation }) => {
                 return {
                     headerRight: (
-                        <MenuIcon
+                        <StyledMaterialIcon
                             name="menu"
                             onPress={() => navigation.navigate('DrawerOpen')}
                         />
