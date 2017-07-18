@@ -1,5 +1,4 @@
 
-const { StyleSheet } = require('react-native');
 const { default: styled } = require('styled-components/native');
 const gStyles = require('styles');
 

@@ -23,7 +23,7 @@ const {
 
 // Component
 
-class BeerView extends React.Component {
+module.exports = class BeerView extends React.Component {
 
     static propTypes = {
         navigation: React.PropTypes.object.isRequired
@@ -72,5 +72,3 @@ class BeerView extends React.Component {
         );
     }
 }
-
-module.exports = BeerView;
