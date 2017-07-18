@@ -4,7 +4,7 @@ const Icon = require('react-native-vector-icons/FontAwesome').default;
 
 // Styles
 
-const { default: lStyles } = require('./styles');
+const lStyles = require('./styles');
 
 const {
     FlexScrollView,

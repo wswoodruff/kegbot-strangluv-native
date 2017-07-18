@@ -7,7 +7,7 @@ const {
     ScrollView,
     Text } = gStyles;
 
-exports.default = {
+module.exports = {
 
     FlexScrollView: ScrollView.extend`
         flex: 1;
