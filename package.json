@@ -30,7 +30,7 @@
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "react-mixin": "3.0.5",
-    "react-native": "0.41.2",
+    "react-native": "0.60.0",
     "react-native-i18n": "1.0.0",
     "react-native-material-bottom-navigation": "^0.4.1",
     "react-native-navbar": "1.6.0",
@@ -47,7 +47,7 @@
     "strangeluv-core": "^1.2.0",
     "tcomb-form-native": "0.6.5",
     "undefined": "0.1.0",
-    "underscore": "1.8.3",
+    "underscore": "1.12.1",
     "validate.js": "0.10.0"
   },
   "devDependencies": {
