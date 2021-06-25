@@ -26,7 +26,7 @@
     "inert": "^4.0.0",
     "keymirror": "^0.1.1",
     "labbable": "^2.1.0",
-    "node-sass": "^4.5.0",
+    "node-sass": "^6.0.1",
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "react-mixin": "3.0.5",
